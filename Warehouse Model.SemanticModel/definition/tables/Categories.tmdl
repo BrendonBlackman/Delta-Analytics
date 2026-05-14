@@ -1,0 +1,36 @@
+table Categories
+	lineageTag: 0acbf621-dca9-4bb3-a89a-5aac657f4f3d
+
+	column category_id
+		dataType: int64
+		formatString: 0
+		lineageTag: da56004d-8f0a-44be-aefc-545312bf5d48
+		summarizeBy: none
+		sourceColumn: category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_name
+		dataType: string
+		lineageTag: 877562ff-9243-4173-91a1-63ed66db874a
+		summarizeBy: none
+		sourceColumn: category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Categories = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\categories"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

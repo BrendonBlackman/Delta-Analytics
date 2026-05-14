@@ -1,0 +1,37 @@
+table Promotions
+	lineageTag: a63087f2-c9e5-4ace-aca4-ff92faa4ab1f
+
+	column promotion_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 25f36664-ccaf-4cf2-84ef-883e3f9a2ca6
+		summarizeBy: none
+		sourceColumn: promotion_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d6beed7-0a19-4097-bba2-e87d71a573db
+		summarizeBy: none
+		sourceColumn: discount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Promotions = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\promotions"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

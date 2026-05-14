@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Categories","Customers","Employees","Order_Items","Orders","Payments","Products","Promotions","Returns","Shipments","Stores","Suppliers"]
+
+ref table Categories
+ref table Returns
+ref table Customers
+ref table Orders
+ref table Shipments
+ref table Order_Items
+ref table Suppliers
+ref table Promotions
+ref table Payments
+ref table Products
+ref table Employees
+ref table Stores
+
+ref cultureInfo en-US
+

@@ -1,0 +1,178 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 879.95148831239385,
+            "y": 605.521517397138
+          },
+          "nodeIndex": "Categories",
+          "nodeLineageTag": "0acbf621-dca9-4bb3-a89a-5aac657f4f3d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 338.01502039485428
+          },
+          "nodeIndex": "Customers",
+          "nodeLineageTag": "7fb38b15-6c8b-4199-a4b3-0b9fc216d4d7",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 729.79182928866
+          },
+          "nodeIndex": "Employees",
+          "nodeLineageTag": "cc34a3b1-63a8-4b03-b9d2-6bdf88fe5bd5",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 807.31326394296,
+            "y": 282.94481427872279
+          },
+          "nodeIndex": "Order_Items",
+          "nodeLineageTag": "380e2aed-6e52-4d37-8e52-970c7a73d311",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 390.11074425086048,
+            "y": 315.32017583475226
+          },
+          "nodeIndex": "Orders",
+          "nodeLineageTag": "418f7a88-ebce-42b4-a2e1-e4a816b075fe",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 801.07455652988892,
+            "y": 0
+          },
+          "nodeIndex": "Payments",
+          "nodeLineageTag": "53c9eca5-ca5d-4be4-acf9-d96d4deb1f0a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1164.8078888670916,
+            "y": 526.47325873170848
+          },
+          "nodeIndex": "Products",
+          "nodeLineageTag": "64d2ac49-9490-49cd-8b33-5fb210f86cba",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 207.0302223397789,
+            "y": 133.00697752590395
+          },
+          "nodeIndex": "Promotions",
+          "nodeLineageTag": "a63087f2-c9e5-4ace-aca4-ff92faa4ab1f",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1406.350417415998,
+            "y": 242.68663755523028
+          },
+          "nodeIndex": "Returns",
+          "nodeLineageTag": "84b270ce-ad79-4432-9383-8f0dc4db9f36",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 444.04541744744472,
+            "y": 0
+          },
+          "nodeIndex": "Shipments",
+          "nodeLineageTag": "72bb7739-6d17-4fa3-a223-e8a215e4df43",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 228.5888905266894,
+            "y": 549.70530027668781
+          },
+          "nodeIndex": "Stores",
+          "nodeLineageTag": "976d567b-11f5-4933-ae3f-cabc7e4c6855",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1451.8957835139993,
+            "y": 567.47193142735375
+          },
+          "nodeIndex": "Suppliers",
+          "nodeLineageTag": "e587e230-2a2c-4ae1-b779-4e908b5800a3",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

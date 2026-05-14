@@ -1,0 +1,45 @@
+table Shipments
+	lineageTag: 72bb7739-6d17-4fa3-a223-e8a215e4df43
+
+	column shipment_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 227c27c9-948f-4a11-8ff4-d04784315755
+		summarizeBy: sum
+		sourceColumn: shipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 18d9c665-2510-4969-9b33-0a61592912d9
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: b264dfa7-cc67-43d9-a11b-10626c274afa
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Shipments = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\shipments"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
