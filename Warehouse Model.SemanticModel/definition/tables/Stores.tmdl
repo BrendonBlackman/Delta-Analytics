@@ -1,0 +1,36 @@
+table Stores
+	lineageTag: 976d567b-11f5-4933-ae3f-cabc7e4c6855
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 30ed5ee3-61ef-4e88-b877-92cbaf851a82
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 62aa4889-479d-4bc7-9e48-8de3e225c957
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Stores = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\stores"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

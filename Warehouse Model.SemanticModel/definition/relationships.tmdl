@@ -1,0 +1,48 @@
+relationship AutoDetected_5badd447-7271-4f2e-923c-8827c31a19c3
+	fromColumn: Products.category_id
+	toColumn: Categories.category_id
+
+relationship AutoDetected_1fb34dba-bc1e-42e0-829d-8c89bab17ff2
+	fromColumn: Returns.order_item_id
+	toColumn: Order_Items.order_item_id
+
+relationship AutoDetected_90135206-c78d-478d-a965-5d3d43c5abfc
+	fromColumn: Orders.customer_id
+	toColumn: Customers.customer_id
+
+relationship AutoDetected_eab6074f-deb8-4790-adde-38fc1aa2c36a
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Shipments.order_id
+	toColumn: Orders.order_id
+
+relationship AutoDetected_dbfc9cff-7651-44e3-8c21-f7476c211b8c
+	fromColumn: Order_Items.order_id
+	toColumn: Orders.order_id
+
+relationship AutoDetected_206dea46-cd8d-44da-909a-84f6cfc744dc
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Payments.order_id
+	toColumn: Orders.order_id
+
+relationship AutoDetected_2826acc8-bfaa-4ede-a02f-bb38dde311fc
+	fromColumn: Orders.store_id
+	toColumn: Stores.store_id
+
+relationship AutoDetected_8ee55590-827d-42fd-9dce-2730fd7428de
+	fromColumn: Employees.store_id
+	toColumn: Stores.store_id
+
+relationship AutoDetected_0e1fed15-26fc-48aa-811d-6fdf2bdfb254
+	fromColumn: Orders.promotion_id
+	toColumn: Promotions.promotion_id
+
+relationship AutoDetected_1a10a057-d234-4f96-9fc5-b6e10a5ade80
+	fromColumn: Order_Items.product_id
+	toColumn: Products.product_id
+
+relationship AutoDetected_6b76ed52-3000-49b6-a2cd-caa175cd8448
+	fromColumn: Products.supplier_id
+	toColumn: Suppliers.supplier_id
+

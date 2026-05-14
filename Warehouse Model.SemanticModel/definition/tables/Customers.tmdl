@@ -1,0 +1,44 @@
+table Customers
+	lineageTag: 7fb38b15-6c8b-4199-a4b3-0b9fc216d4d7
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 132830e3-893a-4941-b74f-b90b80866bd9
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: d2289dde-dd3a-41de-b18e-6f6e9f1e0780
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column signup_date
+		dataType: string
+		lineageTag: 1100e9f8-6980-4e06-8ed6-15594ad71dfb
+		summarizeBy: none
+		sourceColumn: signup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customers = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\customers"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,46 @@
+table Returns
+	lineageTag: 84b270ce-ad79-4432-9383-8f0dc4db9f36
+
+	column return_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 38a688a8-d078-463f-b657-220d738aed47
+		summarizeBy: sum
+		sourceColumn: return_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 148e51cb-11ea-4ce7-befc-1badc4ebbc91
+		summarizeBy: none
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column refund
+		dataType: int64
+		formatString: 0
+		lineageTag: 42709f75-1618-43eb-8966-b83322005685
+		summarizeBy: sum
+		sourceColumn: refund
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Returns = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\returns"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

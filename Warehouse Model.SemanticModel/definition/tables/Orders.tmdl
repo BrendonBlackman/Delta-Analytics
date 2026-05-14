@@ -1,0 +1,63 @@
+table Orders
+	lineageTag: 418f7a88-ebce-42b4-a2e1-e4a816b075fe
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 065c52b5-6827-4194-b8b4-da9c7134f5bd
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d271f386-f28a-48b7-a4aa-c22da06f615b
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 71c5610e-9410-42fa-9d5d-f5531ba78357
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: string
+		lineageTag: b63a4c4e-3dc8-4db3-b3d1-ccf26e104187
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column promotion_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 00d2b110-28b4-431d-9fe6-be95a053621d
+		summarizeBy: none
+		sourceColumn: promotion_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Orders = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\orders"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

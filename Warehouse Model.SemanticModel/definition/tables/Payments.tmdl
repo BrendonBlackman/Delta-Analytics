@@ -1,0 +1,46 @@
+table Payments
+	lineageTag: 53c9eca5-ca5d-4be4-acf9-d96d4deb1f0a
+
+	column payment_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 63f88dca-4b13-4ce3-a52c-4fe014ba87e2
+		summarizeBy: sum
+		sourceColumn: payment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c4a8f65-53c6-4be1-8970-b8a871fd3050
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: int64
+		formatString: 0
+		lineageTag: dee6b5b9-6f6c-496a-bada-65ebec7a7bd2
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Payments = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\payments"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

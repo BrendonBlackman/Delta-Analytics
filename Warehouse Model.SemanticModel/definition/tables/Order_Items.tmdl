@@ -1,0 +1,64 @@
+table Order_Items
+	lineageTag: 380e2aed-6e52-4d37-8e52-970c7a73d311
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f3cc4e2-e1fe-412c-a420-385ebe559a90
+		summarizeBy: none
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ec81d536-d158-4628-a5ff-1597e6fee5b9
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b25673d7-7c8a-4bdf-9de1-40ac6faf5176
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d18d168-1d35-4bd7-93ef-e328c80c56b5
+		summarizeBy: sum
+		sourceColumn: qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: int64
+		formatString: 0
+		lineageTag: 342e77e0-d2d8-4ea3-a139-b1d730566e11
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Order_Items = m
+		mode: import
+		source =
+				let
+				    Source = let
+				   Source = Folder.Contents("C:\Users\Brendon.Blackman\Documents\Kiro Workspace\BrendonsRepo\DeltaFiles\order_items"),
+				   ToDelta = DeltaLake.Table(Source)
+				in
+				   ToDelta
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
