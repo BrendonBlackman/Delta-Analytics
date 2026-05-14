@@ -7,7 +7,7 @@ The goal is to produce a sophisticated Power BI star schema capable of handling 
 🛠️ Key Technologies
 Infrastructure: Proxmox VE (Virtualization), Samba/SMB (Networked Storage).
 
-Processing Engine: Python & DuckDB (High-performance OLAP).
+Processing Engine: Python (pandas, deltalake).
 
 Storage Format: Delta Lake / Parquet (Columnar storage).
 
@@ -24,9 +24,11 @@ Visualization: Power BI Desktop (Advanced DAX & Dimensional Modeling).
 🏗️ Phase 2: ETL & Optimization (In Progress)
 [ ] Scripting the ingestion of 12 relational CSV tables via Python.
 
-[ ] Implementing DuckDB for rapid data typing and transformations.
+[ ] Local version: generates Delta tables to a local DeltaFiles folder.
 
-[ ] Converting raw files into Delta Parquet on the Samba share to enable predicate pushdown.
+[ ] Remote version: generates Delta tables directly to the Samba share.
+
+[ ] Converting raw files into Delta Parquet to enable predicate pushdown.
 
 📅 Phase 3: Dimensional Modeling (Upcoming)
 [ ] Architecting a Galaxy Schema in Power BI.
